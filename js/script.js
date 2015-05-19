@@ -1,36 +1,38 @@
-(function(){
-var d = document;
-var scrollTopButtons = [
-  d.querySelectorAll('.page-wrapper header nav a')[0],
-  d.querySelectorAll('.page-wrapper footer nav a')[0]
-];
-var scrollBottomButtons = [
-  d.querySelectorAll('.page-wrapper header nav a')[1],
-  d.querySelectorAll('.page-wrapper footer nav a')[1]
-];
-var i=0, j=0;
+$(function(){
 
-for (i; i<scrollTopButtons.length; i++){
-  scrollTopButtons[i].addEventListener('click', function(e){
-    e.preventDefault();
-    window.scrollTo(0, 0);
-  }, true)
-}
-for (j; j<scrollBottomButtons.length; j++){
-  scrollBottomButtons[j].addEventListener('click', function(e){
-    e.preventDefault();
-    window.scrollTo(0, d.body.scrollHeight);
-  }, true)
-}
+var d = document;
 
 // Make header narrower when page is scrolled
 window.addEventListener('scroll', function(){
-var pageY = window.pageYOffset;
-var d = document;
-  if(pageY > 100){
-    d.querySelector('header').classList.add('narrow');
-  } else if (pageY < 100) {
-    d.querySelector('header').classList.remove('narrow');
-  }
-})
-})();
+  var pageY = window.pageYOffset;
+    if(pageY > 100){
+      d.querySelector('header').classList.add('narrow');
+    } else if (pageY < 100) {
+      d.querySelector('header').classList.remove('narrow');
+    }
+ });
+
+ var topoffset = 100;
+ var hash = $(this).find('li.active a').attr('href');
+
+     $(document).ready(function(){
+       console.log(topoffset);
+     });
+
+ //Use smooth scrolling when clicking on navigation
+  $('.nav-wrapper a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') ===
+      this.pathname.replace(/^\//,'') &&
+      location.hostname === this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top-topoffset+2
+        }, 500);
+        return false;
+      } //target.length
+    } //click function
+  }); //smooth scrolling
+
+});
