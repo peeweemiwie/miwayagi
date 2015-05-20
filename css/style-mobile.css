@@ -18,10 +18,7 @@ margin: 0;
   background-color: rgb(255, 255, 255);
   border-bottom: 2px dotted rgb(204, 204, 204);
   display: flex;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   justify-content: space-between;
-  -webkit-justify-content: space-between;
   position: fixed;
   top: 0;
   width: 100%;
@@ -40,28 +37,44 @@ margin: 0;
 .page-wrapper > header h1 span::first-letter {
   color: rgb(252, 107, 4);
 }
+.page-wrapper > header ul,
+.page-wrapper > footer ul {
+  list-style: none;
+}
+.page-wrapper > header li,
+.page-wrapper > footer li {
+  display: inline-block;
+}
+.page-wrapper > header nav li,
+.page-wrapper footer nav li {
+  border-radius: .5rem;
+
+  display: inline-block;
+
+  margin-right: 1rem;
+  padding: 1rem;
+
+}
 .page-wrapper > header nav a,
 .page-wrapper footer nav a {
-  /*background-color: #fff;*/
-  border-radius: .5rem;
-  /*color: rgb(85, 85, 85);*/
   color: #FFF;
-  display: inline-block;
   font-family: 'Pompiere', cursive;
   font-size: 4rem;
   font-weight: bold;
   line-height: 100%;
-  margin-right: 1rem;
-  padding: 1rem;
   text-decoration: none;
 }
-.page-wrapper > header nav a:nth-of-type(1),
-.page-wrapper footer nav a:nth-of-type(1) {
+.page-wrapper > header nav li:nth-of-type(1),
+.page-wrapper footer nav li:nth-of-type(1) {
   background-color: rgb(252, 107, 4);
 }
-.page-wrapper > header nav a:nth-of-type(2),
-.page-wrapper footer nav a:nth-of-type(2) {
+.page-wrapper > header nav li:nth-of-type(2),
+.page-wrapper footer nav li:nth-of-type(2) {
   background-color: rgb(252, 183, 4);
+}
+.page-wrapper > header nav li:nth-of-type(3),
+.page-wrapper footer nav li:nth-of-type(3) {
+  background-color: rgb(150, 199, 105);
 }
 main {
   margin-top: 6rem; /*Extra space for header*/
@@ -97,7 +110,8 @@ main article p {
   color: #777;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
-  margin: 0 0 .5rem;
+  line-height: 1.2;
+  margin: 0 0 1rem;
 }
 main article a{
   text-decoration: none;
@@ -196,19 +210,25 @@ main article h3{
   content: "- ";
   color: #FC6B04;
 }
+/* ========== bio page ========== */
+.bio .image {
+  text-align: center;
+}
+.bio img {
+  border: 8px solid rgb(252, 183, 4);
+  border-radius: 50%;
+  width: 90%;
+}
 /* ========== contact page ========== */
 .contact article {
   display: flex;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   justify-content: space-around;
-  -webkit-justify-content: space-around;
 }
 .contact .linkedin,
 .contact .github {
   background-position: right bottom;
   background-repeat: no-repeat;
-  border: 2px solid #FCB704;
+  border: 2px solid rgb(150, 199, 105);
   border-radius: 50%;
   display: block;
   font-size: 3rem;
@@ -232,22 +252,20 @@ main article h3{
 }
 .contact .linkedin:hover,
 .contact .github:hover {
-  background-color: #FCB704;
+  background-color: rgba(150, 199, 105, .5);
   color: #FFF;
-  opacity: .5;
 }
 
 /* ========== footer and download ========== */
 
 footer {
   border-top: 2px solid #CCC;
-  margin-bottom: 5rem;
+  margin-bottom: 20rem;
   padding-top: 1rem;
 }
 footer nav{
   display: flex;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  justify-content: flex-end;
 }
 footer nav a {
   width: 100%;
@@ -255,7 +273,6 @@ footer nav a {
 }
 .download {
   align-items: center;
-  -webkit-align-items: center;
   background-image: url(../img/download-gray.png);
   background-repeat: no-repeat;
   background-position: right center;
@@ -267,8 +284,6 @@ footer nav a {
   font-size: 2.2rem;
   font-weight: bold;
   display: flex;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   opacity: .9;
   padding: 1rem;
   position: fixed;

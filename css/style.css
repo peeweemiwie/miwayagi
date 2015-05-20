@@ -27,14 +27,6 @@ body {
   width: 100%;
   z-index: 3;
 }
-.page-wrapper > header ul,
-.page-wrapper > footer ul {
-  list-style: none;
-}
-.page-wrapper > header li,
-.page-wrapper > footer li {
-  display: inline-block;
-}
 .page-wrapper > header h1 {
   color: rgb(107, 107, 107);
   flex: 1.5;
@@ -49,6 +41,14 @@ body {
 }
 .page-wrapper > header h1 span::first-letter {
   color: rgb(252, 107, 4);
+}
+.page-wrapper > header ul,
+.page-wrapper > footer ul {
+  list-style: none;
+}
+.page-wrapper > header li,
+.page-wrapper > footer li {
+  display: inline-block;
 }
 .page-wrapper > header nav,
 .page-wrapper footer nav {
