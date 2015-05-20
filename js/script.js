@@ -1,6 +1,8 @@
 $(function(){
 
 var d = document;
+var topoffset = 100;
+var hash = $(this).find('li.active a').attr('href');
 
 // Make header narrower when page is scrolled
 window.addEventListener('scroll', function(){
@@ -11,13 +13,6 @@ window.addEventListener('scroll', function(){
       d.querySelector('header').classList.remove('narrow');
     }
  });
-
- var topoffset = 100;
- var hash = $(this).find('li.active a').attr('href');
-
-     $(document).ready(function(){
-       console.log(topoffset);
-     });
 
  //Use smooth scrolling when clicking on navigation
   $('.nav-wrapper a[href*=#]:not([href=#])').click(function() {
