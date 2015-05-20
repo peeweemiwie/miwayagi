@@ -27,7 +27,7 @@ margin: 0;
 .page-wrapper > header h1 {
   color: rgb(107, 107, 107);
   font-family: 'Raleway Dots', cursive;
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: bold;
   margin: 0;
 }
@@ -109,7 +109,7 @@ main article a,
 main article p {
   color: #777;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 1.2;
   margin: 0 0 1rem;
 }
@@ -211,6 +211,9 @@ main article h3{
   color: #FC6B04;
 }
 /* ========== bio page ========== */
+.bio .text {
+  padding: 2rem;
+}
 .bio .image {
   text-align: center;
 }
@@ -260,7 +263,7 @@ main article h3{
 
 footer {
   border-top: 2px solid #CCC;
-  margin-bottom: 20rem;
+  margin-bottom: 5rem;
   padding-top: 1rem;
 }
 footer nav{
